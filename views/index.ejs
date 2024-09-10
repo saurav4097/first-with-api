@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>navbar page</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  
+    <div class="box1">
+        
+       <a class="box11"  style="color: green;font-weight: bolder;">mypad*`'/.</a>
+        <a class="box11"  id="box111"   >Home</a>
+        <a class="box11"  id="box111" href="/add"  >Add </a>
+        
+        <a class="box11"  id="box111"  href="/search" >search</a>  
+       
+    </div>
+    <div class="boxx2">
+        
+        <% if (data && data.length) { %>
+          <% for (let i = 0; i < data.length; i++) { %>
+            <div class="boxx21">
+             <div class="boxxx1"><h1> <%= data[i].name %></h1></div>
+             <div class="boxxx2"><a><%= data[i].price %></a></div>
+             <div class="boxxx3">
+    
+                <!-- Delete button -->
+                <form action="/delete" method="POST">
+                  <input type="hidden" name="topic" value="<%= data[i].name %>">
+                  <button type="submit" class="delete">Delete</button>
+                </form>
+              </div>
+            </div>
+
+          <% } %>
+        <% } else { %>
+          <p>No items to display.</p>
+        <% } %>
+      </div>
+  
+</body>
+</html>

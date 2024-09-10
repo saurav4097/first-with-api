@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>navbar page</title>
+    <link rel="stylesheet" href="/style3.css" />
+</head>
+<body>
+    <div class="box1">
+      <a class="box11"   style="color: green;font-weight: bolder;">mypad*`'/.</a>
+        <a class="box11"  id="box111"   href="/" >Home</a>
+        <a class="box11"  id="box111"  href="/add">Add </a>
+        
+        <a class="box11"  id="box111"  href="/search">search</a>  
+        
+    </div>
+    <div class="search11">
+        <form action="/search1" method="POST">
+            <input type="text" name="name" placeholder="Enter name to search" required>
+            <button type="submit">Search</button>
+        </form>
+        
+    </div>
+    <div class="boxx2">
+        <% if (data && data.length > 0) { %>
+            <% for (let i = 0; i < data.length; i++) { %>
+                <div class="boxx21">
+                    <div class="boxxx1"><h1><%= data[i].name %></h1></div>
+                    <div class="boxxx2"><p>Price: <%= data[i].price %></p></div>
+                </div>
+            <% } %>
+        <% } else { %>
+            <p>No products found.</p>
+        <% } %>
+    </div>
+    
+        
+
+</body>
+</html>
